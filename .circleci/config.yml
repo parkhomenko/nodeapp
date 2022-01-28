@@ -15,7 +15,9 @@ jobs:
             - run: npm test
             - run:
                 name: Deploying
-                command: eb deploy Nodeapp-env
+                command: |
+                  eb use Nodeapp-env
+                  eb deploy Nodeapp-env
 
 workflows:
   build-and-test:
